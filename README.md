@@ -24,6 +24,8 @@ We Want to be able to manage the objects via :
 ## How to Use it ?
 
 (Waiting to complete the Task then we update)
+## setup the models
+![models](./img/all_models.jpg)
 
 ## Authors
 

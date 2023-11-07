@@ -5,6 +5,9 @@ from datetime import datetime
 
 
 class BaseModel:
+    """base models which hold the common atributes 
+    (id, updated_at, created_at )and function (save, to_dict...)
+	"""
 
     def __init__(self, *args, **kwargs):
 
@@ -12,8 +15,13 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
+                    """ Review
+                    hna you checked for created_at or updated_at keys
+                    but fl'assignment darti 4ir self.created_at but updated_at mabants liya
+                    """
                     self.created_at = datetime.strptime(value, dformat)
                 elif key == '__class__':
+                    #dead code
                     pass
                 else:
                     setattr(self, key, value)
