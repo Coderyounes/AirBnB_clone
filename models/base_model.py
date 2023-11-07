@@ -2,10 +2,7 @@
 
 import uuid
 from datetime import datetime
-from models.engine.file_storage import FileStorage
-
-
-storage = FileStorage()
+import models
 
 
 class BaseModel:
@@ -16,7 +13,7 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
-                    self.created_at = datetime.strptime(value, dformat)
+                    setattr(self, key, datetime.strptime(value, dformat))
                 elif key == '__class__':
                     pass
                 else:
@@ -32,7 +29,8 @@ class BaseModel:
 
     def save(self):
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self):
         obj_dict = self.__dict__.copy()
