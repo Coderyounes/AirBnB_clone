@@ -22,7 +22,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             try:
-                new_instance = eval(arg)()
+                new_instance = globals()[arg]()
                 new_instance.save()
                 print(new_instance.id)
             except NameError:
