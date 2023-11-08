@@ -13,6 +13,10 @@ class HBNBCommand(cmd.Cmd):
         """Quit command to exit the program\n"""
         return True
 
+    def emptyline(self):
+        """disable the repettion of the last command using emptyline method"""
+        pass
+
     def do_EOF(self, line):
         """exit the program after reach/get the end-of-file\n"""
         return True
