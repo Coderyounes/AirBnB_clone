@@ -7,7 +7,7 @@ from models.base_model import BaseModel
 
 class HBNBCommand(cmd.Cmd):
 
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
     def do_quit(self, line):
         """Quit command to exit the program\n"""
@@ -18,6 +18,11 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, arg):
+        """reate new instance
+
+        Args:
+            arg (_type_): _description_
+        """
         if not arg:
             print("** class name missing **")
         else:
