@@ -22,6 +22,11 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, arg):
+        """reate new instance
+
+        Args:
+            arg (_type_): _description_
+        """
         if not arg:
             print("** class name missing **")
         else:
