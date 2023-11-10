@@ -39,6 +39,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             try:
                 new_instance = globals()[arg]()
+                new_instance.save()
                 print(new_instance.id)
             except NameError:
                 print("** class doesn't exist **")
