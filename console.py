@@ -11,7 +11,6 @@ from models.amenity import Amenity
 from models.user import User
 
 
-
 class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
@@ -29,10 +28,8 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, arg):
-        """reate new instance
-
-        Args:
-            arg (_type_): _description_
+        """
+        create new instance
         """
         if not arg:
             print("** class name missing **")
@@ -45,8 +42,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
 
     def do_show(self, args):
-        """ Prints the string representation 
-        of an instance based on the class name and id."""
+        """
+        Prints the string representation
+        of an instance based on the class name and id.
+        """
         obj = storage.all()
         args_list = args.split()
 
@@ -64,8 +63,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, args):
-        """  Deletes an instance based on the class name and id 
-        (save the change into the JSON file)"""
+        """
+        Deletes an instance based on the class name and id
+        (save the change into the JSON file)
+        """
         obj = storage.all()
         args_list = args.split()
 
@@ -84,8 +85,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, args):
-        """ Prints all string representation of all instances
-        based or not on the class name.  """
+        """
+        Prints all string representation of all instances
+        based or not on the class name.
+        """
         obj = storage.all()
         args_list = args.split()
 

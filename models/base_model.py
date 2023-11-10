@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-
 import uuid
 from datetime import datetime
 import models
 
 
 class BaseModel:
-    """base models which hold the common atributes 
+    """base models which hold the common atributes
     (id, updated_at, created_at )and function (save, to_dict...)
-	"""
+    """
 
     def __init__(self, *args, **kwargs):
 
@@ -18,7 +17,7 @@ class BaseModel:
                 if key == 'created_at' or key == 'updated_at':
                     setattr(self, key, datetime.strptime(value, dformat))
                 elif key == '__class__':
-                    #dead code
+                    # dead code
                     pass
                 else:
                     setattr(self, key, value)
