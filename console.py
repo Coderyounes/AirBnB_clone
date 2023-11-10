@@ -157,7 +157,7 @@ class HBNBCommand(cmd.Cmd):
         if len(line) == 0:
             return
 
-        pattern = "^([A-Za-z]+)\.([a-z]+)\(([^(]*)\)"
+        pattern = r"^([A-Za-z]+)\.([a-z]+)\(([^(]*)\)"
         m = re.match(pattern, line)
 
         mName, method, params = m.groups()
