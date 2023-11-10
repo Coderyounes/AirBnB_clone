@@ -3,8 +3,8 @@ from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-        """Place specs
-
+        """
+        Place specs
         Args:
             BaseModel : main model
         Attrs:

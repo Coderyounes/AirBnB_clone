@@ -6,8 +6,8 @@ class Amenity(BaseModel):
         """
         Amenity specs
         Args:
-            BaseModel : main model
+                BaseModel : main model
         Attrs:
-            name (str) : name of the ameniy
+                name (str) : name of the ameniy
         """
         name = ""

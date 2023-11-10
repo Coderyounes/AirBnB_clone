@@ -9,6 +9,7 @@ from models.city import City
 from models.place import Place
 from models.amenity import Amenity
 from models.user import User
+import re
 
 
 class HBNBCommand(cmd.Cmd):
@@ -140,6 +141,43 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
+    def do_count(self, line):
+        """Print the count all class instances"""
+        cur_class = globals().get(line, None)
+        if cur_class is None:
+            print("** class doesn't exist **")
+            return
+        n = 0
+        for obj in storage.all().values():
+            if obj.__class__.__name__ == line:
+                n += 1
+        print(n)
+
+    def default(self, line):
+        if len(line) == 0:
+            return
+
+        pattern = "^([A-Za-z]+)\.([a-z]+)\(([^(]*)\)"
+        m = re.match(pattern, line)
+
+        mName, method, params = m.groups()
+
+        if len(params) == 0:
+            params = []
+
+        cmd = " ".join([mName] + params)
+
+        if method == 'all':
+            return self.do_all(cmd)
+
+        if method == 'count':
+            return self.do_count(cmd)
+
+        if method == 'destroy':
+            return self.do_destroy(cmd)
+
+        if method == 'update':
+            return self.do_update(cmd)
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
