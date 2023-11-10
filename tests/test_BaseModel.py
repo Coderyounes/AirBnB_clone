@@ -18,10 +18,12 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(self.base_model.id, another_base_model.id)
 
     def test_created_at_is_datetime(self):
-        self.assertIsInstance(self.base_model.created_at, datetime.datetime)
+        test_created = self.base_model.created_at
+        self.assertIsInstance(test_created, datetime.datetime)
 
     def test_updated_at_is_datetime(self):
-        self.assertIsInstance(self.base_model.updated_at, datetime.datetime)
+        test_update = self.base_model.updated_at
+        self.assertIsInstance(test_update, datetime.datetime)
 
     def test_save_method(self):
         original = self.base_model.updated_at
@@ -37,5 +39,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertIn('updated_at', obj_dict)
 
     def test_str_method(self):
-        expected_str = f"[BaseModel] ({self.base_model.id}) {self.base_model.__dict__}"
-        self.assertEqual(str(self.base_model), expected_str)
+        i_id = self.base_model_id
+        idict = self.base_model.__dict__
+        self.assertEqual(str(self.base_model), f"[BaseModel] ({i_id}) {idict}")

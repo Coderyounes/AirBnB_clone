@@ -179,5 +179,6 @@ class HBNBCommand(cmd.Cmd):
         if method == 'update':
             return self.do_update(cmd)
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
