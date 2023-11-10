@@ -8,6 +8,8 @@ from models.state import State
 from models.city import City
 from models.place import Place
 from models.amenity import Amenity
+from models.user import User
+
 
 
 class HBNBCommand(cmd.Cmd):
@@ -37,12 +39,13 @@ class HBNBCommand(cmd.Cmd):
         else:
             try:
                 new_instance = globals()[arg]()
-                new_instance.save()
                 print(new_instance.id)
             except NameError:
                 print("** class doesn't exist **")
 
     def do_show(self, args):
+        """ Prints the string representation 
+        of an instance based on the class name and id."""
         obj = storage.all()
         args_list = args.split()
 
@@ -60,6 +63,8 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, args):
+        """  Deletes an instance based on the class name and id 
+        (save the change into the JSON file)"""
         obj = storage.all()
         args_list = args.split()
 
@@ -78,6 +83,8 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, args):
+        """ Prints all string representation of all instances
+        based or not on the class name.  """
         obj = storage.all()
         args_list = args.split()
 
