@@ -8,6 +8,8 @@ from models.state import State
 from models.city import City
 from models.place import Place
 from models.amenity import Amenity
+from models.user import User
+import re
 
 
 class HBNBCommand(cmd.Cmd):
@@ -27,10 +29,8 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, arg):
-        """reate new instance
-
-        Args:
-            arg (_type_): _description_
+        """
+        create new instance
         """
         if not arg:
             print("** class name missing **")
@@ -43,6 +43,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
 
     def do_show(self, args):
+        """
+        Prints the string representation
+        of an instance based on the class name and id.
+        """
         obj = storage.all()
         args_list = args.split()
 
@@ -60,6 +64,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, args):
+        """
+        Deletes an instance based on the class name and id
+        (save the change into the JSON file)
+        """
         obj = storage.all()
         args_list = args.split()
 
@@ -78,6 +86,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, args):
+        """
+        Prints all string representation of all instances
+        based or not on the class name.
+        """
         obj = storage.all()
         args_list = args.split()
 
@@ -129,6 +141,43 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
+    def do_count(self, line):
+        """Print the count all class instances"""
+        cur_class = globals().get(line, None)
+        if cur_class is None:
+            print("** class doesn't exist **")
+            return
+        n = 0
+        for obj in storage.all().values():
+            if obj.__class__.__name__ == line:
+                n += 1
+        print(n)
+
+    def default(self, line):
+        if len(line) == 0:
+            return
+
+        pattern = r"^([A-Za-z]+)\.([a-z]+)\(([^(]*)\)"
+        m = re.match(pattern, line)
+
+        mName, method, params = m.groups()
+
+        if len(params) == 0:
+            params = []
+
+        cmd = " ".join([mName] + params)
+
+        if method == 'all':
+            return self.do_all(cmd)
+
+        if method == 'count':
+            return self.do_count(cmd)
+
+        if method == 'destroy':
+            return self.do_destroy(cmd)
+
+        if method == 'update':
+            return self.do_update(cmd)
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

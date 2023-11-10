@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-
 import unittest
 from models.base_model import BaseModel
 import datetime
 import uuid
 
+
 class TestBaseModel(unittest.TestCase):
-    
+
     def setUp(self):
         self.base_model = BaseModel()
 
