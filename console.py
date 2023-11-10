@@ -100,9 +100,12 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             class_name = args_list[0]
-            for key in obj:
-                if key.split('.')[0] == class_name:
-                    print(str(obj[key]))
+            if hasattr(globals()[class_name], 'all'):
+                print(globals()[class_name].all())
+            else:
+                for key in obj:
+                    if key.split('.')[0] == class_name:
+                        print(str(obj[key]))
 
     def do_update(self, args):
         """
