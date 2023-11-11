@@ -13,7 +13,9 @@ import re
 
 
 class HBNBCommand(cmd.Cmd):
-
+    """
+    HBNB - Command-line Interpreter use a various Cmd
+    """
     prompt = "(hbnb) "
 
     def do_quit(self, line):
