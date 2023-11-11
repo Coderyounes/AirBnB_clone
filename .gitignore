@@ -38,7 +38,7 @@ MANIFEST
 *.spec
 
 # Installer logs
-pip-log.txt
+pip-log.txtf
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
