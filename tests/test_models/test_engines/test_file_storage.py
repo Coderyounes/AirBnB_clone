@@ -18,6 +18,10 @@ import os
 class FileStorageTests(unittest.TestCase):
     """ all File Storage Tests """
 
+    def test__file_path(self):
+        """ test _file_path """
+        self.assertEqual(str, type(FileStorage._FileStorage__file_path))
+
     def test_type_objects(self):
             """ test __objects type """
             self.assertEqual(type(models.storage.all()), dict)
