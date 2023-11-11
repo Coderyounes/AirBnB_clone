@@ -13,9 +13,10 @@ from models.engine.file_storage import FileStorage
 from datetime import datetime
 
 
-
 class TestBaseModel(unittest.TestCase):
-        """ testing BaseModel """
+        """
+        testing BaseModel
+        """
 
         def test_self_id(self):
                 base_model1 = BaseModel()
@@ -42,11 +43,13 @@ class TestBaseModel(unittest.TestCase):
                 self.assertIn("__class__", base_model.to_dict())
 
         def test_save(self):
+                """ testing save() method on base_model"""
                 base_model = BaseModel()
-                cur_id1 = base_model.id
+                cur_updated_at1 = base_model.updated_at
                 base_model.save()
-                cur_id2 = base_model.id
-                self.assertEqual(cur_id1, cur_id2)
+                cur_updated_at2 = base_model.updated_at
+                self.assertNotEqual(cur_updated_at1, cur_updated_at2)
+
 
 if __name__ == "__main__":
     unittest.main()
