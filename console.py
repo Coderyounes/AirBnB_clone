@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-
+"""
+cmd - module is the base of the comand line Interpreter
+Other - Models are classes to act like objects or destinations
+re - Regex Modules
+"""
 import cmd
 from models import storage
 from models.base_model import BaseModel
