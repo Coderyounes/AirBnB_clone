@@ -145,7 +145,9 @@ class HBNBCommand(cmd.Cmd):
             key = "{}.{}".format(class_name, obj_id)
             if key in obj:
                 instance = obj[key]
-                if hasattr(instance, attr_name):
+                if isinstance(instance, globals()[class_name]):
+                    if not hasattr(instance, attr_name):
+                        setattr(instance, attr_name, None)
                     setattr(instance, attr_name, attr_value)
                     instance.save()
                 else:
