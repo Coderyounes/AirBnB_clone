@@ -25,12 +25,10 @@ class FileStorageTests(unittest.TestCase):
     def test_type_objects(self):
             """ test __objects type """
             self.assertEqual(type(models.storage.all()), dict)
-            # self.assertEqual(dict, type(FileStorage._FileStorage__objects))
 
     def test_all(self):
             """ test all function """
             self.assertEqual(type(models.storage.all()), dict)
-            # self.assertEqual(dict, type(models.storage.all()))
 
     def test_new(self):
             """ test new functions """
@@ -60,7 +58,7 @@ class FileStorageTests(unittest.TestCase):
             """ test __init__ function """
             self.assertIsInstance(models.storage, FileStorage)
 
-    def test_save(self):
+    def test_save_with_Arg(self):
             """ test save with an arg """
             with self.assertRaises(TypeError):
                 models.storage.save(None)
