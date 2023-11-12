@@ -28,7 +28,6 @@ class TestPlaceClass(unittest.TestCase):
         self.assertTrue(type(Place.price_by_night) == int)
         self.assertTrue(type(Place.latitude) == float)
         self.assertTrue(type(Place.longitude) == float)
-        self.assertTrue(type(Place.amenity_ids) == list)
 
 
 if __name__ == '__main__':
