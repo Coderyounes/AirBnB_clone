@@ -40,14 +40,14 @@ This will launch the interactive command-line interpreter.
 ### Available Commands
 #### quit
 Exit the Program
-'''shell
+```bash
 (hbnb) quit
-'''
+```
 #### EOF
 Exit the program after reacing the end-of-file
-'''shell
+```bash
 (hbnb) EOF or Ctrl+D
-'''
+```
 
 
 
