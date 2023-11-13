@@ -39,17 +39,59 @@ This will launch the interactive command-line interpreter.
 
 ### Available Commands
 #### quit
-Exit the Program
+Exit the Program:
 ```bash
 (hbnb) quit
 ```
 #### EOF
-Exit the program after reacing the end-of-file
+Exit the program after reacing the end-of-file:
 ```bash
 (hbnb) EOF or Ctrl+D
 ```
+#### create
+Create a new instance of a class. Provide the class name as an argument:
+```bash
+(hbnb) create BaseModel
+```
+#### show
+show the string representation of an instance based on the class name and ID:
+```bash
+(hbnb) show BaseModel 1234-5647-9874-4562 
+```
+#### destroy
+Delete an instance based on the class name and ID:
+```bash
+(hbnb) destroy BaseModel 1234-5647-9874-4562
+```
+#### all
+print all string representations of instances, based on the class name or print all instances:
+```bash
+(hbnb) all
+(hbnb) all BaseModel
+```
+#### update
+Update an instance based on the class name , ID, attribute name:
+```bash
+(hbnb) update BaseModel 1234-5647-9874-4562 name "New Name"
+```
+#### count
+Print the count of all instance of a specific class:
+```bash
+(hbnb) count BaseModel
+```
+### Custom Commads:
+for now the Console support only one custome Command BaseModel.all()
+Print all string representations of instance of BaseModel:
+```bash
+(hbnb) BaseModel.all()
+```
 
+#### Notes
 
+<li>
+<ul>invalid inputs will be handled with appropriate error messages</ul>
+<ul>Make sure to enclose the attribute value in the update command  with double quotes</ul>
+</li>
 
 ## setup the models
 ![models](./img/all_models.jpg)
