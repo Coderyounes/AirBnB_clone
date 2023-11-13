@@ -2,8 +2,6 @@
 """Unit test for the class city
 """
 import unittest
-# import json
-import pep8
 from models import city
 from models.city import City
 from models.base_model import BaseModel

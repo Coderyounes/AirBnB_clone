@@ -40,6 +40,7 @@ class FileStorageTests(unittest.TestCase):
 
     def test_save(self):
             """ test save functions """
+            self.my_model = BaseModel()
             self.my_model.save()
             self.assertEqual(
                 os.path.exists(models.storage._FileStorage__file_path),
