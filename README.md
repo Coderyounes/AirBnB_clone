@@ -32,9 +32,22 @@ We Want to be able to manage the objects via :
 ### Running the Console
 
 To start the console, execute the following command in your terminal:
-```shell 
+```bash 
 Python3 console.py
 ```
+This will launch the interactive command-line interpreter.
+
+### Available Commands
+##### 'quit'
+Exit the Program
+'''bash
+(hbnb) quit
+'''
+##### 'EOF'
+Exit the program after reacing the end-of-file
+'''bash
+(hbnb) EOF or Ctrl+D
+'''
 
 
 
