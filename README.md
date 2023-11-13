@@ -1,14 +1,12 @@
 ### Airbnb Clone -  The Console Project
 
-Place Holder for a Picture
+![models](./img/Project.png)
 
-## Getting Started
+## Brief Description
 
 The console , is a command interpreter his  functionality is similar to shell , but with limited & unique Commands.
 
 We Want to be able to manage the objects via :
-
-
 
 => Create a new objects (new User or New Place)
 
@@ -21,9 +19,25 @@ We Want to be able to manage the objects via :
 => Destroy/Delete an object
 
 
-## How to Use it ?
+## How to Use it 'console.py'
 
-(Waiting to complete the Task then we update)
+`console.py` is a command-line interpreter designed to interact with a hierarchical object-oriented data storage system. The commands provided in the interpreter allow you to perform operations on instances of various classes.
+
+### Getting Started
+
+1. Ensure you have Python3 installed on your system
+2. Clone the Repository containing 'console.py'
+3. Navigate to the project directory in your terminal 
+
+### Running the Console
+
+To start the console, execute the following command in your terminal:
+```shell 
+Python3 console.py
+```
+
+
+
 ## setup the models
 ![models](./img/all_models.jpg)
 
