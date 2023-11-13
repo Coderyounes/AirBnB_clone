@@ -38,14 +38,14 @@ Python3 console.py
 This will launch the interactive command-line interpreter.
 
 ### Available Commands
-##### 'quit'
+#### quit
 Exit the Program
-'''bash
+'''shell
 (hbnb) quit
 '''
-##### 'EOF'
+#### EOF
 Exit the program after reacing the end-of-file
-'''bash
+'''shell
 (hbnb) EOF or Ctrl+D
 '''
 
