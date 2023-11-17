@@ -174,4 +174,7 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+# Ignore w3c_validator
+/web_static/w3c_validator.py
+
 # End of https://www.toptal.com/developers/gitignore/api/python
