@@ -2,8 +2,8 @@ header {
     background-color: white;
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
-    padding-left: 20px;
     height: 70px;
     width: 100%;
+    background-position: left-top;
     border-bottom: 1px solid #CCCCCC;
 }
