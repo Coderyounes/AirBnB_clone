@@ -42,21 +42,15 @@ button:hover {
 
 .title {
     margin: 17px 30px 0;
+    font-weight: 600;
   }
   
   .subtitle {
     margin: 0px 30px 20px;
     font-size: 14px;
-  }
-
-  h3 {
-    font-weight: 600;
-  }
-
-  h4 {
     font-weight: 400;
   }
-  
+
   .popover {
     display: none;
     background-color: #FAFAFA;
