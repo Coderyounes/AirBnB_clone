@@ -60,9 +60,10 @@ button:hover {
   }
   
   .popover {
-    background-color: tomato;
+    background-color: white;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
+    height: 180px;
     width: 100%;
     list-style-type: none;
     padding-left: 0%;
@@ -78,4 +79,9 @@ button:hover {
     list-style-type: none;
     align-items: center;
     padding-bottom: 10px;
+}
+
+.am {
+    list-style-type: none;
+    margin-top: 23%;
 }
