@@ -1,0 +1,27 @@
+.places h1 {
+    height: 30px;
+    width: 100%;
+    padding-left: 3%;
+}
+
+.House {
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ff5a5f;
+    border-radius: 4px;
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+.House3 {
+    width: 390px;
+    padding: 20px;
+    margin-left: 25%;
+    border: 1px solid #ff5a5f;
+    border-radius: 4px;
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+}
