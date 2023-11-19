@@ -32,7 +32,8 @@
     background-color: white;
     display: inline-block;
     margin: 18px;
-    height: 300px;
+    height: auto;
+    padding: 15px;
     }
     .place_name {
     display: inline-block;
@@ -96,4 +97,16 @@
         line-height: 100px;
         text-align: center;
         margin-left: 25px;
+        }
+
+        .user {
+            display: flex;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+
+        .description {
+            display: flex;
+            padding: 10px;
+            margin-left: 9px;
         }
